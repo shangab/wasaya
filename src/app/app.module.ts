@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './comps/login/login.component';
+import { AuthoritiesComponent } from './comps/authorities/authorities.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './comps/login/login.component';
     ReportersComponent,
     DocComponent,
     DialogsComponent,
-    LoginComponent
+    LoginComponent,
+    AuthoritiesComponent
   ],
   imports: [
     BrowserModule,

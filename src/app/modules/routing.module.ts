@@ -5,6 +5,7 @@ import { DocComponent } from '../comps/doc/doc.component';
 import { ReadersComponent } from '../comps/readers/readers.component';
 import { ReportersComponent } from '../comps/reporters/reporters.component';
 import { LoginComponent } from '../comps/login/login.component';
+import { AuthoritiesComponent } from '../comps/authorities/authorities.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'readers', component:ReadersComponent},
   {path:'reporters', component:ReportersComponent},
   {path:'login', component:LoginComponent},
+  {path:'auths', component:AuthoritiesComponent},
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public user:any = {id:0};
+  public user:any = {id:0, email:'shangab@gmail.com', pwd:'123'};
   constructor(private _ss: ShareService, private _hs: HttpService, private _router: Router, private _ut: UtilsService) { }
   ngOnInit() {
   }
@@ -20,13 +20,12 @@ export class LoginComponent implements OnInit {
     this._router.navigateByUrl('/');
   }
   login() {
-    this.authlogin();
     this.normallogin();
   }
 
   normallogin() {
     this._ss.setAppIsBusy(true);
-    this._hs.get('users', 'filter[]=locked,eq,0&filter[]=username,eq,' + this.user.username + '&filter[]=pwd,eq,' + this.user.pwd + '&satisfy=all')
+    this._hs.get('users', 'filter[]=email,eq,' + this.user.email + '&filter[]=pwd,eq,' + this.user.pwd + '&satisfy=all')
       .subscribe(res => {
         if (res.json().users.length != 0) {
           this._ss.setAppIsBusy(false);

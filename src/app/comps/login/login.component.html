@@ -1,28 +1,78 @@
-<div class="contents">
-    <mat-card>
+<mat-tab-group color="primary">
+    <mat-tab label="الدخول للحساب">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title color="primary">
+                    <img src="assets/logo2.png" alt="">
+                    <h4>تسجيل الدخول</h4>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="البريد الالكتروني" name="email" [(ngModel)]="user.email">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="كلمه السر" type="password" name="pwd" [(ngModel)]="user.pwd">
+                </mat-form-field>
+                <br>
+                <br>
+                <button mat-raised-button (click)="login()" color="primary">دخول</button>
+            </mat-card-content>
+        </mat-card>
 
+    </mat-tab>
+    <mat-tab label="تسجيل جديد">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title color="primary">
+                    <img src="assets/logo2.png" alt="">
+                    <h4>تسجيل جديد</h4>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="الاسم الكامل" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="البريد الالكتروني" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="نوع الوثيقه" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="رقمها" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="رقم الهاتف" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="الدوله" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="المدينه" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="العنوان" name="email" [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="الموثق" type="password" name="pwd" [(ngModel)]="user.pwd">
+                </mat-form-field>
+                <br>
+                <br>
+                <button mat-raised-button (click)="login()" color="primary">سجلني</button>
+            </mat-card-content>
+        </mat-card>
 
-        <mat-card-header>
-            <mat-card-title color="primary">
-                <img src="assets/logo.jpg" alt="">
-                <h4>تسجيل الدخول</h4> 
-
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            دخول اختباري سريع <br>
-            <button mat-raised-button *ngFor="let user of users" (click)="fastLogin(user)">{{user.username}}</button>
-            <br><br><br>
-            <mat-form-field>
-                <input matInput placeholder="البريد الالكتروني" name="email" [(ngModel)]="user.username">
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <input matInput placeholder="كلمه السر" type="password" name="pwd" [(ngModel)]="user.pwd">
-            </mat-form-field>
-            <br>
-            <br>
-            <button mat-raised-button (click)="login()" color="primary">دخول</button>
-        </mat-card-content>
-    </mat-card>
-</div>
+    </mat-tab>
+</mat-tab-group>

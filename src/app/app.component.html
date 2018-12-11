@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="mat-elevation-z4 mytoolbar">
   <p><button mat-button (click)="sidenav.toggle()"><img src="assets/icnMenu.png" width="32" alt=""></button></p>
-  <img src="assets/logo.png" alt="" width="50px">
+  <img src="assets/logo2.png" alt="" width="50px">
 
   <span>
     &nbsp;
@@ -12,8 +12,8 @@
   </span>
   <div *ngIf="user.id>0; else elseBlock" class="site-title">
     <span>{{user.fullname}} &nbsp;</span> &nbsp;&nbsp;
-    <span *ngIf="user.photo.length>0"><img src="{{user.photo}}" alt="" class="profile-avatar"></span>&nbsp;&nbsp;
-    <span *ngIf="user.photo.length==0"><img src="assets/user.png" alt="" class="profile-avatar"></span>&nbsp;&nbsp;
+    <span *ngIf="user.photo!=null && user.photo.length>0"><img src="{{user.photo}}" alt="" class="profile-avatar"></span>&nbsp;&nbsp;
+    <span *ngIf="user.photo==null || user.photo.length==0"><img src="assets/user.png" alt="" class="profile-avatar"></span>&nbsp;&nbsp;
     <button mat-button (click)="logout()" matTooltip="Log out, and save data before that!!">خروج</button>
   </div>
   <ng-template #elseBlock>
@@ -31,6 +31,7 @@
   <mat-sidenav #sidenav [mode]="mode.value">
     <a [routerLink]="['']" (click)="goto('/')" class="sd-btn" (click)="sidenav.toggle()">الرئسيه</a><br>
     <a [routerLink]="['profile']" (click)="goto('/profile')" class="sd-btn" (click)="sidenav.toggle()">إعداداتي الخاصه</a><br>
+    <a [routerLink]="['auths']" (click)="sidenav.toggle(); goto('/auths');" class="sd-btn">مكاتب قانونيه</a><br>
     </mat-sidenav>
 
   <mat-sidenav-content>

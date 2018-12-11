@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>مكاتب قانونيه في بلدك</mat-card-title>
+    <mat-card-subtitle>إبحث عن مكاتب محاماه في بلدك لتوثيق وصيتك الكترونياً</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="countryname" placeholder="الدوله">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="cityname" placeholder="المدينه بالدوله">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="search()">ابحث عن المكاتب</button>
+
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let item of items">
+        <img src="{{item.photo}}" alt="" width="100" style="margin-left:10px;">
+        <br>الاسم: {{item.name}}
+        <br>رقم الهاتف: {{item.phone}}
+        <br>العنوان: {{item.address}}
+        <br><button mat-raised-button color="primary" (click)="addAsTestifier(item)">اضف كشاهد عدل</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+
+
+  </mat-card-content>
+</mat-card>
